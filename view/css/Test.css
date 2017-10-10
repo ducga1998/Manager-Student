@@ -1,0 +1,38 @@
+.pagination > li {
+  display: inline-block;
+}
+.pagination {
+  text-align: center;
+  display: block;
+}
+.btnDetail {
+ box-shadow: 1px 1px 1px 1px #ffff;
+}
+.fa{
+	margin-right:5px; 
+	font-size: 20px;
+}
+.result{
+	position: absolute;;
+}
+
+	.result p {
+    margin: 0px;
+    font-size: 19px;
+    background-color: #ecebe9;
+    border-radius: 2px;
+    padding: 6px 20px 3px 12px;
+    z-index: 22;
+}
+
+.result p:hover {
+    background-color: #747d7d;
+    transition: 0.3s;
+    color: #d1d7e0;
+}
+.modal-backdrop{
+  z-index: 900;
+}
+.modal{
+  z-index: 901;
+}
