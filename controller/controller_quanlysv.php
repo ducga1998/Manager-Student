@@ -6,7 +6,8 @@ class Controller_qlsv
     {
         if(Controller_login::is_login() == true){
             if( $_SESSION["current_id"]==3)
-            {$this->xuly_action();
+            {
+                $this->xuly_action();
             }
             elseif($_SESSION["current_id"]==1){
                 $this->PageUser();
@@ -119,6 +120,14 @@ class Controller_qlsv
         /*
         $totalPage=$model_qlsv->handingPaGination();
         $rows = $model_qlsv->get_list_sv($search ,$start,10); */
+        
+        $id=$_SESSION["idUser"];
+        $model_qlsv = new Model_qlsv();
+        $rows= $model_qlsv->GetInfoUserById($id);
+      
+
+
+
         include "view/PageAdmin.php";
     }
 

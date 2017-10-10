@@ -13,11 +13,14 @@ class Controller_login
         if(!empty($user_name) and !empty($user_pass)){
             $model = Model_qlsv::inst();
             $rs = $model->check_login($user_name,$user_pass);
+            
            
             if($rs != false){
                 $_SESSION['login'] = true;
                 $_SESSION["current_id"]=$rs["Current_id"];
-                $_SESSION["NameUser"]=$rs["Name"];
+               
+                $_SESSION["idUser"]=$rs;
+               
                
 
             }

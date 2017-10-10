@@ -15,7 +15,7 @@
 
 <body>
    
-    <?php var_dump($_SESSION["sql"]); ?>
+ <?php   var_dump( $_SESSION["idUser"])?>
     <div class="cont">
         <form action="./index.php" id="FormLogin" method="post">
             <div class="demo">

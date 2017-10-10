@@ -45,6 +45,9 @@
 
 
     <body class="nav-md">
+    <?php
+    
+    ?>
         <div class="container body">
             <div class="main_container">
                 <div class="col-md-3 left_col">
@@ -64,7 +67,10 @@
 
                             <div class="profile_info">
                                 <span>Welcome,</span>
-                                <h2>Admin</h2>
+                                <h2><?php
+                               echo $rows["UserName"];
+                                
+                                ?></h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -248,27 +254,49 @@
                         </div>
                     </div>
                     <!--end  feature InfomationUser -->
-                    <div class="hide PostHistory ">thông tin Admin</div>
+                    <div class="hide PostHistory ">Thông tin Admin</div>
                     <!--end  feature postHistory -->
+
                     <div class="hide PostConfession ">
-                        <div class="wrapPost">
-                            <div class="menu">
-                                <div class="avt"><img src="" alt=""></div>
-                                <div class="tilte">tilte post</div>
-                                <div class="content">Content post đã show</div>
-
-                            </div>
-
-
+                        <h1>Name post:<?php 
+                        $rows["Name"];
+                        
+                        ?></h1>
+                        <form action="">
+                            <div class="row">
+                                
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                <div class="form-group">
+                            <label for="comment">Title:</label>
+                            <input name="tilte" type="text" class="form-control" id="TitleConfession">
                         </div>
-
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                <div class="form-group">
+                            <label for="comment">Category:</label>
+                            <input name="Category" type="text" class="form-control" id="Category">
+                        </div>
+                                </div>
+                                
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Post">
+                        </form>
 
 
                     </div>
-                    <!--end  feature PostConfession -->
+
+
 
                 </div>
+                <!--end  feature PostConfession -->
+
             </div>
+        </div>
         </div>
 
         <!-- /page content -->
@@ -287,9 +315,9 @@
         </div>
 
         <!-- jQuery -->
-       
+
         <script src="./view/vendors/jquery/dist/jquery.js"></script>
-        
+
         <script src="./view/js/script.js"></script>
         <!-- Bootstrap -->
         <script src="./view/vendors/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -12,7 +12,7 @@
 					
 $username = "root";
 $password = "";
-$dbname = "testdatabase";
+$dbname = "post";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
