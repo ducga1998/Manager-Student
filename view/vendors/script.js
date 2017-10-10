@@ -24,29 +24,22 @@ $(document).ready(function() {
         $(".PostConfession").addClass("show");
     });
     $(document).on("click", ".btn-post", function() {
-        /* id, UserName, Title,Content,view,Category */
-        var id = $(this).attr("iduser");
-        var UserName = $(this).attr("username");
+        var id
         var title = $("#TitleConfession").val();
-        var Category = $("#Category").val();
+        var category = $("#Category").val();
         var content = $("#Content").val();
-        var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category;
-        console.log(StringArray);
+        var StringArrat = title + "." + category + "." + content;
         $.ajax({
             type: "GET",
             url: "./view/RequestDataBase.php",
 
             data: {
-                'StringArray': StringArray
+                'StringArrat': StringArrat
 
             },
             cache: false,
             success: function(data) {
-                $(".success").text(data);
-                $(".success").addClass("showAlert");
-                $("#TitleConfession").val("");
-                $("#Category").val("");
-                $("#Content").val("");
+                $(".success").html(data);
             }
         });
 

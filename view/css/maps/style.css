@@ -1,14 +1,19 @@
 .wrapPost .menu {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
-
 .wrapPost .menu .tilte {
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
 }
-
 .wrapPost .menu .content {
-    font-family: monospace;
-    font-weight: italic;
+  font-family: monospace;
+  font-weight: italic;
+}
+.showAlert {
+  opacity: 1;
+  transition: 1s;
+}
+.success {
+  opacity: 0;
 }

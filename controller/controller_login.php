@@ -19,7 +19,7 @@ class Controller_login
                 $_SESSION['login'] = true;
                 $_SESSION["current_id"]=$rs["Current_id"];
                
-                $_SESSION["idUser"]=$rs;
+                $_SESSION["idUser"]=$rs["id"];
                
                
 

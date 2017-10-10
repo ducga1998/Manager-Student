@@ -26,6 +26,10 @@ function connect(){
 
     // Check connection
 }
+public function DisConnect()
+{
+    mysqli_close($this->conn);
+}
 function CoutRow(){
     $sql="SELECT COUNT(id)FROM infouser";
     $result = $this->conn->query($sql);
@@ -37,7 +41,7 @@ function CoutRow(){
 }
  public function GetInfoUser()
 {
-     $sql="SELECT UserName, PassWord, Name,BirthDay,Country,id,Current_id,Mail,Avatar,Number FROM infouser";
+     $sql="SELECT UserName, PassWord, Name,BirthDay,Country,id,Current_id,Mail,Avatar,NumberPhone FROM infouser";
     $result = $this->conn->query($sql);
    $rows=array();
     while($row = $result->fetch_assoc()) {
@@ -48,13 +52,14 @@ function CoutRow(){
 }
 public function GetInfoUserById($id)
 {
-     $sql="SELECT UserName, PassWord, Name,BirthDay,Country,id,Current_id,Mail,Avatar,Number FROM infouser where id=$id";
-    $result = $this->conn->query($sql);
-
-    while($row = $result->fetch_assoc()) {
-        $rows = $row;
-    }
-    return $rows;
+ $sql="SELECT UserName,PassWord,Name,id,BirthDay,Country,Current_id,Mail,Avatar,NumberPhone FROM infouser WHERE id='$id'";
+ 
+ $result = $this->conn->query($sql);
+  
+    $row = $result->fetch_assoc();
+     
+    
+    return $row;
    
 }
 public function GetInfoPost()
@@ -86,13 +91,13 @@ public function check_login($user_name , $pass){
             $row = mysqli_fetch_assoc($result);
             return $row;
     
-            mysqli_close($this->conn);
+           
     
     
            }
            else{
             return false;
-            mysqli_close($this->conn);
+          
     
            }
            
@@ -103,7 +108,7 @@ public function check_login($user_name , $pass){
             $id=$idS["COUNT(id)"]+1;
             $sql = "INSERT INTO infouser (UserName,Mail,PassWord,NumberPhone,Country,Current_id,id) VALUES ('$user_name', '$gmail', '$pass','$number','$country',1,$id)";
           
-            mysqli_query($this->conn, $sql);
+           
         }
             
 

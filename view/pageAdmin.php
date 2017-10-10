@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Admin page</title>
-
+    
     <!-- Bootstrap -->
     <!-- <link href="./view/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -46,7 +46,7 @@
 
     <body class="nav-md">
     <?php
-    
+   
     ?>
         <div class="container body">
             <div class="main_container">
@@ -270,6 +270,7 @@
                             <label for="comment">Title:</label>
                             <input name="tilte" type="text" class="form-control" id="TitleConfession">
                         </div>
+                       
                                 </div>
                                 <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                                 <div class="form-group">
@@ -284,8 +285,15 @@
                             <label for="comment">Comment:</label>
                             <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Post">
+                        <input <?php
+                        echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' ";
+                        ?> type="button" class="btn btn-primary btn-post" value="Post">
                         </form>
+                        
+                        <div class="alert alert-success success">
+                           
+                        </div>
+                        
 
 
                     </div>

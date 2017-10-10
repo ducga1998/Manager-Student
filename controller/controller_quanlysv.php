@@ -120,10 +120,14 @@ class Controller_qlsv
         /*
         $totalPage=$model_qlsv->handingPaGination();
         $rows = $model_qlsv->get_list_sv($search ,$start,10); */
-        
+        $id="";
         $id=$_SESSION["idUser"];
+        
         $model_qlsv = new Model_qlsv();
         $rows= $model_qlsv->GetInfoUserById($id);
+        var_dump($rows);
+       
+        
       
 
 
