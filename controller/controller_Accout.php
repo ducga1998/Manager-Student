@@ -4,6 +4,7 @@ class Controller_Registration{
     public function __construct()
     {
       $this->ViewRegistration();
+      Model_qlsv::inst()->CoutRowPost();
     }
     static $_inst;
 

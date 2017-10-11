@@ -7,13 +7,15 @@ function dateNow(){
 { 
 	
 	
-	include "./model/manager_user.php";
+	include "../model/manager_user.php";
     $idS=Model_qlsv::inst()->CoutRowPost();
    
     $id=$idS["COUNT(id)"]+1;
     return $id;
 }
-$id_post=getId_post();
+$s=getId_post();
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -29,22 +31,24 @@ isset($_REQUEST["StringArray"])?$StringArray=$_REQUEST["StringArray"]:1;
 	  $Content=$array[3];
 	  $Category=$array[4];
 	  $view=1;
+	  $id_post=$s;
 	  
 	 
 	  $DateUp=dateNow();
 
-	  
+	
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-$id_post=getId_post();
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql="INSERT INTO post (id, UserName, Title,Content,view,DateUp,Categor,id_post)
-VALUES ($id, '$UserName', '$Title','$Content',$view,'$DateUp','$Category',$id_post)";
+$sql="INSERT INTO post (id, UserName, Title,Content,view,DateUp,Category,id_post)
+VALUES ($id, '$UserName', '$Title','$Content',$view,'$DateUp','$Category',$id_post )";
 echo $sql;
+$_SESSION["sql12"]=$sql;
 $result = $conn->query($sql);
 
 $conn->close();

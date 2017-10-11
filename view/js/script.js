@@ -39,11 +39,13 @@ $(document).ready(function() {
     $(document).on("click", ".btn-post", function() {
         /* id, UserName, Title,Content,view,Category */
         var id = $(this).attr("iduser");
+        var id_post = $(this).attr("id_post");
+
         var UserName = $(this).attr("username");
         var title = $("#TitleConfession").val();
         var Category = $("#Category").val();
         var content = $("#Content").val();
-        var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category;
+        var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category + "." + id_post;
         console.log(StringArray);
         $.ajax({
             type: "GET",
@@ -65,29 +67,28 @@ $(document).ready(function() {
 
 
     });
-    $(document).on("click", ".btn-post", function() {
+    $(document).on("click", ".btn-browse", function() {
         /* id, UserName, Title,Content,view,Category */
-        var id = $(this).attr("iduser");
-        var UserName = $(this).attr("username");
-        var title = $("#TitleConfession").val();
-        var Category = $("#Category").val();
-        var content = $("#Content").val();
-        var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category;
-        console.log(StringArray);
+        var Accept = $(this).attr("id_post");
+
+
         $.ajax({
             type: "GET",
-            url: "./view/RequestDataBase.php",
+            url: "./view/Accept.php",
 
             data: {
-                'StringArray': StringArray
+                'Accept': Accept
 
             },
             cache: false,
             success: function(data) {
 
+                console.log(x);
+
 
             }
         });
+        $(this).parent().parent().html("");
 
 
     });

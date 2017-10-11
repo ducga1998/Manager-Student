@@ -47,6 +47,8 @@
     <body class="nav-md">
     <?php
    
+  
+
     ?>
         <div class="container body">
             <div class="main_container">
@@ -259,7 +261,7 @@
                     
                     </div>
                     <!--end  feature postHistory -->
-                    <div class="hide CheckPostContainer ">
+                    <div class="hide CheckPostContainer">
                     <?php 
                     
                     include "./view/includeView/CheckPost.php";
@@ -297,7 +299,7 @@
                             <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
                         </div>
                         <input <?php
-                        echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' ";
+                        echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' id_post='".$_SESSION["id_post"]."' ";
                         ?> type="button" class="btn btn-primary btn-post" value="Post">
                         </form>
                         

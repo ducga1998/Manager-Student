@@ -1,6 +1,6 @@
 <?php
                foreach($rowConfession as$index){
-                
+                if($index["view"]==2){
                      echo '<div class="media">
     
     <div class="media-body">
@@ -9,7 +9,7 @@
       <h4>'.$index["Content"].'</h4>
     </div>
   </div>';
-               
+                }
   
                  
                }

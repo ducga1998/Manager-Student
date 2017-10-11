@@ -41,10 +41,11 @@ public function CoutRow(){
 
 }
 public function CoutRowPost(){
-    $sql="SELECT COUNT(id_post)FROM post";
+    $sql="SELECT COUNT(id)FROM post";
     $result = $this->conn->query($sql);
     $row=array();
      $row = $result->fetch_assoc();
+   
      
      return $row;
 
@@ -75,7 +76,7 @@ public function GetInfoUserById($id)
 public function GetInfoPost()
 { 
   
-    $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category FROM post";
+    $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category,id_post FROM post";
     $result = $this->conn->query($sql);
     $rows=array();
     while($row = $result->fetch_assoc()) {
@@ -86,7 +87,7 @@ public function GetInfoPost()
 }
 public function GetPostConfessionUser($id)
 {
-    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category FROM post where id=$id";
+    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category,id_post FROM post where id=$id";
     $result = $this->conn->query($sql);
     $rows=array();
     while($row = $result->fetch_assoc()) {
@@ -154,15 +155,17 @@ public function check_login($user_name , $pass){
 
 
 static function inst(){
-    if(!self::$_inst){
-        self::$_inst=new self();
-        return self::$_inst;
+    if (!self::$_inst) {
+        self::$_inst = new self();
     }
+    return self::$_inst;
+}
 }
 
 
 
-}
+
 Model_qlsv::inst();
+
 
 ?>
