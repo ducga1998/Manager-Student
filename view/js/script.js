@@ -8,6 +8,16 @@ $(document).ready(function() {
 
 
     });
+    $(document).on("click", ".PostConfessions", function() {
+        var x = $(".PostConfession").parent().find(".hide").removeClass("show");
+        $(".PostConfession").addClass("show");
+        console.log("test");
+    });
+
+
+
+
+
     $(document).on("click", ".ShowPostHistory", function() {
         var x = $(".PostHistory").parent().find(".hide").removeClass("show");
         console.log(x);
@@ -18,11 +28,34 @@ $(document).ready(function() {
 
 
     });
-    $(document).on("click", ".PostConfessions", function() {
+    $(document).on("click", ".ShowPostHistory", function() {
+        // xóa đi cái cũ
         var x = $(".PostHistory").parent().find(".hide").removeClass("show");
         console.log(x);
-        $(".PostConfession").addClass("show");
+        // thêm .show để nó hiển thị
+        $(".PostHistory").addClass("show");
+
+
+
+
+
+
     });
+    $(document).on("click", ".InfoMation", function() {
+        // xóa đi cái cũ
+        var x = $(".InfomationUser").parent().find(".hide").removeClass("show");
+        console.log(x);
+        // thêm .show để nó hiển thị
+        $(".InfomationUser").addClass("show");
+
+
+
+
+
+    });
+
+
+
     $(document).on("click", ".btn-post", function() {
         /* id, UserName, Title,Content,view,Category */
         var id = $(this).attr("iduser");

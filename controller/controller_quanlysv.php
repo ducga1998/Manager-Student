@@ -125,7 +125,10 @@ class Controller_qlsv
         
         $model_qlsv = new Model_qlsv();
         $rows= $model_qlsv->GetInfoUserById($id);
-        var_dump($rows);
+        $rowConfession= $model_qlsv->GetInfoPost();
+        $GetPostConfessionUser= $model_qlsv->GetPostConfessionUser($id);
+        
+        
        
         
       

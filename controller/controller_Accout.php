@@ -23,6 +23,8 @@ class Controller_Registration{
        
 
         }
+        /*usernameDK=dkkkkkkkkkkkk&emailDK=duc2820%40gmail.com&
+        passwordDK=123456&NumberPhoneDK=0915460230&CountryDK=nghe+an */
         if(isset($_REQUEST["usernameDK"]))
         {
             $useName=$_REQUEST["usernameDK"]; 
@@ -30,6 +32,7 @@ class Controller_Registration{
             $passwordDK=$_REQUEST["passwordDK"];
             $NumberPhoneDK=$_REQUEST["NumberPhoneDK"];
             $CountryDK=$_REQUEST["CountryDK"];
+           $_SESSION["Test"]="đã chạy đc";
             
             
             

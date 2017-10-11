@@ -30,7 +30,8 @@ public function DisConnect()
 {
     mysqli_close($this->conn);
 }
-function CoutRow(){
+ 
+public function CoutRow(){
     $sql="SELECT COUNT(id)FROM infouser";
     $result = $this->conn->query($sql);
     $row=array();
@@ -64,7 +65,7 @@ public function GetInfoUserById($id)
 }
 public function GetInfoPost()
 {
-    $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category,Ava FROM post";
+    $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category FROM post";
     $result = $this->conn->query($sql);
     $rows=array();
     while($row = $result->fetch_assoc()) {
@@ -73,6 +74,32 @@ public function GetInfoPost()
    
     return $rows;
 }
+public function GetPostConfessionUser($id)
+{
+    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category FROM post where id=$id";
+    $result = $this->conn->query($sql);
+    $rows=array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+   
+    return $rows;
+    
+}
+/* public function GetPostAllConfession()
+{
+    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category FROM post";
+    $result = $this->conn->query($sql);
+    $rows=array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+   
+    
+   
+    return $rows;
+    
+} */
 public function check_login($user_name , $pass){
     
             $sql = "SELECT id,UserName, PassWord,Current_id,Name FROM infouser where UserName='$user_name' and PassWord='$pass'" ;
@@ -103,11 +130,12 @@ public function check_login($user_name , $pass){
            
         }
         /* end check login */
-        function addAccoutIntoPageAdmin($user_name,$gmail,$pass,$number,$country){
+         public function addAccoutIntoPageAdmin($user_name,$gmail,$pass,$number,$country){
             $idS=$this->CoutRow();
             $id=$idS["COUNT(id)"]+1;
             $sql = "INSERT INTO infouser (UserName,Mail,PassWord,NumberPhone,Country,Current_id,id) VALUES ('$user_name', '$gmail', '$pass','$number','$country',1,$id)";
-          
+           $_SESSION["sql"]=$sql;
+           mysqli_close($this->conn);
            
         }
             

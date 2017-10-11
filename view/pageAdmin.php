@@ -92,18 +92,19 @@
                                     <li class=""><a><i class="fa fa-edit"></i>Post <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none;">
                                             <li><a class="PostConfessions" href="#">Post Confessions</a></li>
-
+                                              <li><a href="#" class="ShowPostHistory">Post History</a></li>
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-desktop"></i>Infomation User<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="">
-                                            <li><a href="#">General Elements</a></li>
-
+                                            <li><a class="InfoMation" href="#">Infomation Admin</a></li>
+                                            <li><a class="GrantRight" href="#">Grant Rights Accout</a></li>
+                                            GrantRight InfoMation
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-table"></i> Post History <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="">
-                                            <li><a href="#" class="ShowPostHistory">Post History</a></li>
+                                            <l
 
                                         </ul>
                                     </li>
@@ -234,32 +235,33 @@
 
                     <div class="hide Confession">
 
-
+                    <?php include "./view/includeView/newConfresssion.php"; ?>
 
 
 
                     </div>
                     <!--end  feature Confession -->
                     <div class="hide InfomationUser">
+                    vávsavsavsavsa
 
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="#" class="media-object" style="width:60px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Left-aligned</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
+                        <?php 
+                        include "./view/includeView/InformationUser.php";
+                         ?>
                     </div>
                     <!--end  feature InfomationUser -->
-                    <div class="hide PostHistory ">Thông tin Admin</div>
+                    <div class="hide PostHistory ">
+                    <?php 
+                    
+                    include "./view/includeView/HistoryPost.php";
+                    ?>
+                    
+                    
+                    </div>
                     <!--end  feature postHistory -->
 
                     <div class="hide PostConfession ">
                         <h1>Name post:<?php 
-                        $rows["Name"];
+                       echo $rows["Name"];
                         
                         ?></h1>
                         <form action="">

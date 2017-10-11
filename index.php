@@ -1,5 +1,6 @@
 <?php
 require "controller/core.php";
-var_dump( $_SESSION["idUser"]);
+var_dump( $_SESSION["sql"]);
+
 
 ?>
