@@ -93,6 +93,7 @@
                                         <ul class="nav child_menu" style="display: none;">
                                             <li><a class="PostConfessions" href="#">Post Confessions</a></li>
                                               <li><a href="#" class="ShowPostHistory">Post History</a></li>
+                                              <li><a href="#" class="CheckPost"> Check Post</a></li>
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-desktop"></i>Infomation User<span class="fa fa-chevron-down"></span></a>
@@ -258,6 +259,14 @@
                     
                     </div>
                     <!--end  feature postHistory -->
+                    <div class="hide CheckPostContainer ">
+                    <?php 
+                    
+                    include "./view/includeView/CheckPost.php";
+                    ?>
+                    
+                    
+                    </div>
 
                     <div class="hide PostConfession ">
                         <h1>Name post:<?php 

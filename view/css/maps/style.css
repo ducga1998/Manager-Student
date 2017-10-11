@@ -28,3 +28,7 @@
   transition: 1s;
   background-color: #D3C0AA;
 }
+.alertSuccess {
+  color: green;
+  font-size: 30px;
+}

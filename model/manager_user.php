@@ -40,6 +40,15 @@ public function CoutRow(){
      return $row;
 
 }
+public function CoutRowPost(){
+    $sql="SELECT COUNT(id_post)FROM post";
+    $result = $this->conn->query($sql);
+    $row=array();
+     $row = $result->fetch_assoc();
+     
+     return $row;
+
+}
  public function GetInfoUser()
 {
      $sql="SELECT UserName, PassWord, Name,BirthDay,Country,id,Current_id,Mail,Avatar,NumberPhone FROM infouser";
@@ -64,7 +73,8 @@ public function GetInfoUserById($id)
    
 }
 public function GetInfoPost()
-{
+{ 
+  
     $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category FROM post";
     $result = $this->conn->query($sql);
     $rows=array();
@@ -134,7 +144,8 @@ public function check_login($user_name , $pass){
             $idS=$this->CoutRow();
             $id=$idS["COUNT(id)"]+1;
             $sql = "INSERT INTO infouser (UserName,Mail,PassWord,NumberPhone,Country,Current_id,id) VALUES ('$user_name', '$gmail', '$pass','$number','$country',1,$id)";
-           $_SESSION["sql"]=$sql;
+            $result = $this-> conn->query($sql);
+            $_SESSION["sql"]=$sql;
            mysqli_close($this->conn);
            
         }
@@ -150,6 +161,8 @@ static function inst(){
 }
 
 
+
 }
+Model_qlsv::inst();
 
 ?>
