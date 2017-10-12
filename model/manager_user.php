@@ -61,6 +61,17 @@ public function CoutRowPost(){
     return $rows;
    
 }
+// chỉ có dành cho admin
+public function UpdateInfoUser($id)
+{
+    $sql="UPDATE infouser
+    SET BirthDay = value1, Country = value2, BirthDay = value1, Mail = value2, NumberPhone = value2, Name = value2,
+    WHERE id=$id;";
+    $result = $this->conn->query($sql);
+    mysqli_close($this->conn);
+    
+}
+
 public function GetInfoUserById($id)
 {
  $sql="SELECT UserName,PassWord,Name,id,BirthDay,Country,Current_id,Mail,Avatar,NumberPhone FROM infouser WHERE id='$id'";
@@ -73,10 +84,11 @@ public function GetInfoUserById($id)
     return $row;
    
 }
+   
 public function GetInfoPost()
 { 
   
-    $sql="SELECT id, UserName, Title,Content,view,view,DateUp,Category,id_post FROM post";
+    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category_id,id_post FROM post";
     $result = $this->conn->query($sql);
     $rows=array();
     while($row = $result->fetch_assoc()) {
@@ -87,7 +99,7 @@ public function GetInfoPost()
 }
 public function GetPostConfessionUser($id)
 {
-    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category,id_post FROM post where id=$id";
+    $sql="SELECT id, UserName, Title,Content,view,DateUp,Category_id,id_post FROM post where id=$id";
     $result = $this->conn->query($sql);
     $rows=array();
     while($row = $result->fetch_assoc()) {

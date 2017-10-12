@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>User page</title>
-
+    <title>Admin page</title>
+    
     <!-- Bootstrap -->
     <!-- <link href="./view/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
     <link href="./view/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="./view/build/css/custom.min.css" rel="stylesheet">
+    <link href="./view/build/css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="./view/css/maps/style.css">
     <style>
         .hide {
@@ -45,6 +45,7 @@
 
 
     <body class="nav-md">
+   
         <div class="container body">
             <div class="main_container">
                 <div class="col-md-3 left_col">
@@ -64,7 +65,10 @@
 
                             <div class="profile_info">
                                 <span>Welcome,</span>
-                                <h2>Editor </h2>
+                                <h2><?php
+                               echo $rows["UserName"];
+                                
+                                ?></h2>
                             </div>
                         </div>
                         <!-- /menu profile quick info -->
@@ -86,18 +90,19 @@
                                     <li class=""><a><i class="fa fa-edit"></i>Post <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none;">
                                             <li><a class="PostConfessions" href="#">Post Confessions</a></li>
-
+                                              <li><a href="#" class="ShowPostHistory">Post History</a></li>
+                                              <li><a href="#" class="CheckPost"> Check Post</a></li>
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-desktop"></i>Infomation User<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="">
-                                            <li><a href="#">General Elements</a></li>
-
+                                            <li><a class="InfoMation" href="#">Infomation Admin</a></li>
+                                          
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-table"></i> Post History <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="">
-                                            <li><a href="#" class="ShowPostHistory">Post History</a></li>
+                                            <l
 
                                         </ul>
                                     </li>
@@ -228,47 +233,85 @@
 
                     <div class="hide Confession">
 
-
+                    <?php include "./view/includeView/newConfresssion.php"; ?>
 
 
 
                     </div>
                     <!--end  feature Confession -->
                     <div class="hide InfomationUser">
+                    vávsavsavsavsa
 
-                        <div class="media">
-                            <div class="media-left">
-                                <img src="#" class="media-object" style="width:60px">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Left-aligned</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                    ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
+                        <?php 
+                        include "./view/includeView/InformationUser.php";
+                         ?>
                     </div>
                     <!--end  feature InfomationUser -->
-                    <div class="hide PostHistory ">thông tin Admin</div>
+                    <div class="hide PostHistory ">
+                    <?php 
+                    
+                    include "./view/includeView/HistoryPost.php";
+                    ?>
+                    
+                    
+                    </div>
                     <!--end  feature postHistory -->
+                    <div class="hide CheckPostContainer">
+                    <?php 
+                    
+                    include "./view/includeView/CheckPost.php";
+                    ?>
+                    
+                    
+                    </div>
+
                     <div class="hide PostConfession ">
-                        <div class="wrapPost">
-                            <div class="menu">
-                                <div class="avt"><img src="" alt=""></div>
-                                <div class="tilte">tilte post</div>
-                                <div class="content">Content post đã show</div>
-
-                            </div>
-
-
+                        <h1>Name post:<?php 
+                       echo $rows["Name"];
+                        
+                        ?></h1>
+                        <form action="">
+                            <div class="row">
+                                
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                <div class="form-group">
+                            <label for="comment">Title:</label>
+                            <input name="tilte" type="text" class="form-control" id="TitleConfession">
                         </div>
-
+                       
+                                </div>
+                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                                <div class="form-group">
+                            <label for="comment">Category:</label>
+                            <input name="Category" type="text" class="form-control" id="Category">
+                        </div>
+                                </div>
+                                
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
+                        </div>
+                        <input <?php echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' "; ?> 
+                        type="button" class="btn btn-primary btn-post" value="Post">
+                        </form>
+                        
+                        <div class="alert alert-success success">
+                           
+                        </div>
+                        
 
 
                     </div>
-                    <!--end  feature PostConfession -->
+
+
 
                 </div>
+                <!--end  feature PostConfession -->
+
             </div>
+        </div>
         </div>
 
         <!-- /page content -->
@@ -287,9 +330,9 @@
         </div>
 
         <!-- jQuery -->
-       
+
         <script src="./view/vendors/jquery/dist/jquery.js"></script>
-        
+
         <script src="./view/js/script.js"></script>
         <!-- Bootstrap -->
         <script src="./view/vendors/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -2,12 +2,12 @@ $(document).ready(function() {
     $(document).on("click", ".showConfession", function() {
         var x = $(".Confession").parent().find(".hide").removeClass("show");
         $(".Confession").addClass("show");
-        console.log("test");
+
     });
     $(document).on("click", ".PostConfessions", function() {
         var x = $(".PostConfession").parent().find(".hide").removeClass("show");
         $(".PostConfession").addClass("show");
-        console.log("test");
+
     });
     $(document).on("click", ".CheckPost", function() {
         var x = $(".CheckPostContainer").parent().find(".hide").removeClass("show");
@@ -16,16 +16,24 @@ $(document).ready(function() {
     });
     $(document).on("click", ".ShowPostHistory", function() {
         var x = $(".PostHistory").parent().find(".hide").removeClass("show");
-        console.log(x);
+
         $(".PostHistory").addClass("show");
     });
     $(document).on("click", ".ShowPostHistory", function() {
         // xóa đi cái cũ
         var x = $(".PostHistory").parent().find(".hide").removeClass("show");
-        console.log(x);
+
         // thêm .show để nó hiển thị
         $(".PostHistory").addClass("show");
     });
+    $(document).on("click", ".GrantRight", function() {
+        // xóa đi cái cũ
+        var x = $(".GrantUser").parent().find(".hide").removeClass("show");
+
+        // thêm .show để nó hiển thị
+        $(".GrantUser").addClass("show");
+    });
+
 
 
 
@@ -36,6 +44,34 @@ $(document).ready(function() {
         // thêm .show để nó hiển thị
         $(".InfomationUser").addClass("show");
     });
+
+    $(document).on("click", ".btn-updateInfo", function() {
+        var form = $('#FormUpdateInfoUser').serialize();
+        console.log(form);
+
+
+
+        /*  var formData = $(form).serialize(); */
+        $.ajax({
+            type: "GET",
+            url: "./view/UpdateInfoUser.php",
+
+            data: {
+                'formData': formData
+
+            },
+            cache: false,
+            success: function(data) {
+                $(".success").text(data);
+                $(".success").addClass("showAlert");
+                $("#TitleConfession").val("");
+                $("#Category").val("");
+                $("#Content").val("");
+            }
+        });
+
+    });
+
     $(document).on("click", ".btn-post", function() {
         /* id, UserName, Title,Content,view,Category */
         var id = $(this).attr("iduser");
@@ -46,7 +82,7 @@ $(document).ready(function() {
         var Category = $("#Category").val();
         var content = $("#Content").val();
         var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category + "." + id_post;
-        console.log(StringArray);
+
         $.ajax({
             type: "GET",
             url: "./view/RequestDataBase.php",
@@ -89,6 +125,32 @@ $(document).ready(function() {
             }
         });
         $(this).parent().parent().html("");
+
+
+    });
+    $(document).on("click", ".btnDelete", function() {
+        /* id, UserName, Title,Content,view,Category */
+        var id = $(this).attr("id");
+        console.log(id);
+
+
+        $.ajax({
+            type: "GET",
+            url: "./view/DeleteInfoUser.php",
+
+            data: {
+                'id_delete': id
+
+            },
+            cache: false,
+            success: function(data) {
+
+            }
+
+
+
+        });
+        /*  $(this).parent().parent().html(""); */
 
 
     });

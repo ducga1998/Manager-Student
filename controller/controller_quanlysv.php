@@ -96,13 +96,17 @@ class Controller_qlsv
     {
         # code...
         $model_qlsv=new Model_qlsv();
-       /*  isset( $_SESSION["NameUser"])?$userName= $_SESSION["NameUser"]:1;
-        $RowDetailInfoStudent= $model_qlsv->GetStudentAsGmail($userName); */
+      
         include "./view/PageUser.php";
     }
     public function PageEdit()
     {
         $model_qlsv=new Model_qlsv();
+        $id=$_SESSION["idUser"];
+        $rows= $model_qlsv->GetInfoUserById($id);
+        $rowConfession= $model_qlsv->GetInfoPost();
+        $rowUser=$model_qlsv->GetInfoUser();
+        $GetPostConfessionUser= $model_qlsv->GetPostConfessionUser($id);
         include "./view/PageEditer.php";
         
     }
@@ -126,6 +130,7 @@ class Controller_qlsv
         $model_qlsv = new Model_qlsv();
         $rows= $model_qlsv->GetInfoUserById($id);
         $rowConfession= $model_qlsv->GetInfoPost();
+        $rowUser=$model_qlsv->GetInfoUser();
         $GetPostConfessionUser= $model_qlsv->GetPostConfessionUser($id);
         
         

@@ -1,4 +1,5 @@
 <?php
+if(isset($_REQUEST["StringArray"])){
 function dateNow(){
 	$datetime = new DateTime();
 	return $datetime->format('Y\-m\-d');
@@ -52,6 +53,28 @@ $_SESSION["sql12"]=$sql;
 $result = $conn->query($sql);
 
 $conn->close();
+}
+
+?>
+
+<?php
+
+/* function getidDelete($id)
+{ 
+	
+	
+	include "../model/manager_user.php";
+	Model_qlsv::inst()->DeleteUser($id);
+
+   
+} */
+/* isset()?$idDelete=$_REQUEST("id_delete"):1; */
+
+	
+	/* getidDelete($_REQUEST("id_delete"));     */
+
+
+
 ?>
 
 

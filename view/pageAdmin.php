@@ -102,7 +102,7 @@
                                         <ul class="nav child_menu" style="">
                                             <li><a class="InfoMation" href="#">Infomation Admin</a></li>
                                             <li><a class="GrantRight" href="#">Grant Rights Accout</a></li>
-                                            GrantRight InfoMation
+                                            p InfoMation
                                         </ul>
                                     </li>
                                     <li><a><i class="fa fa-table"></i> Post History <span class="fa fa-chevron-down"></span></a>
@@ -234,7 +234,7 @@
                 <!-- /top navigation -->
 
                 <!-- page content -->
-                <div class="right_col" role="main" style="min-height: 1381px;">
+                <div class="right_col" role="main" style="">
 
                     <div class="hide Confession">
 
@@ -245,13 +245,19 @@
                     </div>
                     <!--end  feature Confession -->
                     <div class="hide InfomationUser">
-                    vávsavsavsavsa
-
+                  
                         <?php 
                         include "./view/includeView/InformationUser.php";
                          ?>
                     </div>
                     <!--end  feature InfomationUser -->
+                    <div class="hide GrantUser">
+                  
+                        <?php 
+                        include "./view/includeView/GrantUser.php";
+                         ?>
+                    </div>
+                            <!-- end Grant User -->
                     <div class="hide PostHistory ">
                     <?php 
                     
@@ -298,9 +304,8 @@
                             <label for="comment">Comment:</label>
                             <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
                         </div>
-                        <input <?php
-                        echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' id_post='".$_SESSION["id_post"]."' ";
-                        ?> type="button" class="btn btn-primary btn-post" value="Post">
+                        <input <?php echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' "; ?> 
+                        type="button" class="btn btn-primary btn-post" value="Post">
                         </form>
                         
                         <div class="alert alert-success success">
