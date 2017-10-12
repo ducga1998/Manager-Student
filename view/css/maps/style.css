@@ -18,6 +18,10 @@
     transition: 1s;
 }
 
+.show {
+    display: inline-block!important;
+}
+
 .successs {
     opacity: 0;
 }

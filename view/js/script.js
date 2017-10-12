@@ -133,6 +133,31 @@ $(document).ready(function() {
 
 
     });
+    $(document).on("click", ".btn-delete", function() {
+        /* id, UserName, Title,Content,view,Category */
+        var DeletePost = $(this).attr("id_post");
+
+
+        $.ajax({
+            type: "GET",
+            url: "./view/Accept.php",
+
+            data: {
+                'DeletePost': DeletePost
+
+            },
+            cache: false,
+            success: function(data) {
+
+                console.log(x);
+
+
+            }
+        });
+        $(this).parent().parent().html("");
+
+
+    });
     $(document).on("click", ".btnDelete", function() {
         /* id, UserName, Title,Content,view,Category */
         var id = $(this).attr("id");

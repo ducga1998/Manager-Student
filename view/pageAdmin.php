@@ -78,7 +78,7 @@ var_dump( $_SESSION["test"]);
                         <!-- /menu profile quick info -->
 
                         <br>
-
+                      
                         <!-- sidebar menu -->
                         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                             <div class="menu_section active">
@@ -87,7 +87,7 @@ var_dump( $_SESSION["test"]);
                                     <li class=""><a><i class="fa fa-home"></i>Confessions<span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu" style="display: none;">
 
-                                            <li><a class="showConfession" data-toggle="pill" href="#menu1">Menu 1</a></li>
+                                            <li><a class="showConfession" data-toggle="pill" href="#menu1">New Confession </a></li>
 
                                         </ul>
                                     </li>
@@ -146,14 +146,15 @@ var_dump( $_SESSION["test"]);
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="">
+                               
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                         <img src="./view/images/img.jpg" alt="">John Doe
                                         <span class=" fa fa-angle-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                        <li><a href="javascript:;"> Profile</a></li>
+                                        <li><a href="#aboutModal" data-toggle="modal" data-target="#myModal"> Profile</a></li>
                                         <li>
-                                            <a href="javascript:;">
+                                            <a >
                                                 <span class="badge bg-red pull-right">50%</span>
                                                 <span>Settings</span>
                                             </a>

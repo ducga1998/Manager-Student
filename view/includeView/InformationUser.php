@@ -30,114 +30,31 @@
                          -->
                     </center>
                     <hr>
+                    <h3>Name:<?php echo $rows["Name"] ?></h3> 
+                    <h3>BirthDay:<?php echo $rows["BirthDay"] ?></h3> 
+                    <h3>Country:<?php echo $rows["Country"] ?></h3> 
+                    <h3>Grant:<?php echo "Admin"?></h3> 
+                    <h3>NumberPhone:<?php echo $rows["NumberPhone"] ?></h3> 
+                    
+                                        <br>    
+                                      
+                                    </div>
+                                    <div class="modal-footer">
+                                        <center>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end container -->
                  
-                    <!-- UserName
-PassWord
-                 
-
-
-id
-
-Mail
-
- -->
-
-<h3>Name:<?php echo $rows["Name"] ?></h3> 
-<h3>BirthDay:<?php echo $rows["BirthDay"] ?></h3> 
-<h3>Country:<?php echo $rows["Country"] ?></h3> 
-<h3>Grant:<?php echo "Admin"?></h3> 
-<h3>NumberPhone:<?php echo $rows["NumberPhone"] ?></h3> 
+                    
+                    
+         
 
                     
 
 
 
-                    <br>    
-                  
-                </div>
-                <div class="modal-footer">
-                    <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">I've heard enough about Joe</button>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<?php 
-
-echo "<table class='table table-bordered  table-hover'>
-    <thead>
-     <tr> 
-      <th>Avatar</th>
-	  <th>ID</th>
-	  <th>Full Name</th>
-	  <th>Email</th>
-      
-      <th>Number</th>
-      <th>Birthday</th>
-      <th>Setting</th>
-	</tr>
-    </thead>";
-    foreach ($rowUser as $row) 
-     	
-      {
-      	/* $data  = array(
-      		'user_id' => $row['id'],
-      		'current_id' => isset($_SESSION["current_id"])?$_SESSION["current_id"]:0,
-      		'action' => 'delete_sv'
-      	);
-
-      	$url = './index.php';
-
-      	$data = base64_encode(serialize($data));
-
-      	$url .='?action='.$data; */
-      	if($row["Avatar"]=="")
-      	{
-      		$avatar="deauft.jpg";
-
-   }
-   else {
-   	# code...
-   	$avatar=$row["Avatar"];
-   }
-/* UserName
-PassWord
-
-
-
-id
-Current_id
-Mail
-
-
- */
-        echo " <tbody>
-      <tr style='transition: 1s;' >
-      <th style='text-align:center'><img style='width:60px;height:60px' src='./controller/folder/".$avatar."' ></th>
-        <td>".$row["id"]." </td>
-         
-        <td>".htmlentities($row["Name"])."</td>
-
-        <td>".$row["Country"]."</td>
-        <th>".$row['NumberPhone']."</th>
-        <th>".$row['BirthDay']."</th>
-		<td><a Filename='".$row["Avatar"]."' data-toggle='modal'  data-target='#updateStudent' class='GetIdClass' id='".$row['id']."' firstname='".$row["Name"]."' LastName='".$row["Name"]."' avatar=".$row["Avatar"]." NumberPhone=".$row["NumberPhone"]." birthDay=".$row["BirthDay"]." ><i class='fa fa-wrench' aria-hidden='true'></i></a>
-		<a id=".$row['id']."   type='button' class='btnDelete' name='".$row["Name"]."'><i class='fa fa-trash' aria-hidden='true'></i></a>
-		<a getId='".$row['id']."' class='btnDetail'  data-toggle='modal' data-target='#DetailStudent'><i class='fa fa-info' aria-hidden='true'></i></a>
-		</td>
-		
-		
-      </tr>
-      
-    </tbody>";
-    }
-	
-
-
-	echo "</table>";
-
- ?>
