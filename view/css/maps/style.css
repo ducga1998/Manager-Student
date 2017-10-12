@@ -1,42 +1,51 @@
 .wrapPost .menu {
-  background-color: aquamarine;
+    background-color: aquamarine;
 }
+
 .wrapPost .menu .tilte {
-  font-size: 30px;
-  font-weight: bold;
-  color: black;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
 }
+
 .wrapPost .menu .content {
-  font-family: monospace;
-  font-weight: italic;
+    font-family: monospace;
+    font-weight: italic;
 }
+
 .showAlert {
-  opacity: 1;
-  transition: 1s;
+    opacity: 1;
+    transition: 1s;
 }
-.success {
-  opacity: 0;
+
+.successs {
+    opacity: 0;
 }
+
 .media-body {
-  background-color: #8EC7C3;
-  border-radius: 15px;
-  padding: 20px;
-  padding-left: 20px;
+    background-color: #8EC7C3;
+    border-radius: 15px;
+    padding: 20px;
+    padding-left: 20px;
 }
+
 .media-body:hover {
-  color: black;
-  transition: 1s;
-  background-color: #D3C0AA;
+    color: black;
+    transition: 1s;
+    background-color: #D3C0AA;
 }
+
 .alertSuccess {
-  color: green;
-  font-size: 30px;
+    color: green;
+    font-size: 30px;
 }
+
 .none {
-  display: none;
+    display: none;
 }
+
 .modal-content {
-  background-color: #62a073;
-  color: #d9e0e2 !important;
-  opacity: 0.8;
+    background-color: #62a073;
+    color: #d9e0e2 !important;
+    opacity: 0.8;
 }

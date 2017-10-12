@@ -46,8 +46,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql="INSERT INTO post (id, UserName, Title,Content,view,DateUp,Category,id_post)
-VALUES ($id, '$UserName', '$Title','$Content',$view,'$DateUp','$Category',$id_post )";
+$sql="INSERT INTO post (id, UserName, Title,Content,view,DateUp,Category_id,id_post)
+VALUES ($id, '$UserName', '$Title','$Content',$view,'$DateUp',$Category,$id_post )";
 echo $sql;
 $_SESSION["sql12"]=$sql;
 $result = $conn->query($sql);

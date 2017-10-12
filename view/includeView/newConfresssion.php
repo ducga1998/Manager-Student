@@ -2,22 +2,16 @@
 <input type="text">
 <select name="" id="">
 
-<?php
+ <?php
+ 
 
+  
+foreach($rowNameCategory as $indexs){
+ 
 
- function GetNameCategory($id)
-{
-
-  include "../../model/manager_user.php";
-  $Name_Category=Model_qlsv::inst()->GetCategoryById($id);
-  return $Name_Category;
-}
-foreach($rowConfession as $indexs){
- $Name_Category= GetNameCategory($indexs["Category_id"]);
-
-echo "<option>".$Name_Category."</option>";
-}
-?>
+echo "<option>".$indexs."</option>";
+} 
+?> 
 </select>
 <?php
                foreach($rowConfession as$index){

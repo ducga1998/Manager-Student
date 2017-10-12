@@ -1,5 +1,6 @@
 <?php
 
+
 class Model_qlsv
 {
     static $_inst;
@@ -71,18 +72,17 @@ public function UpdateInfoUser($id,$Name,$Country,$BirthDay,$Mail,$NumberPhone,$
     mysqli_close($this->conn);
     
 }
- public function GetCategoryById($id_category)
+ public function GetCategoryById()
 {
-    $sql="SELECT name_category FROM catogory WHERE id=$id_category";
+    $sql="SELECT  name_category
+FROM category
+INNER JOIN post
+ON id=id_category";
     
     $result = $this->conn->query($sql);
      
        $row = $result->fetch_assoc();
-       if($row)
-       {
-           echo "bug rồi em";
-           return FALSE;
-       }
+      
     
        
        return $row;

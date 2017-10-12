@@ -126,10 +126,13 @@ class Controller_qlsv
         $rows = $model_qlsv->get_list_sv($search ,$start,10); */
         $id="";
         $id=$_SESSION["idUser"];
-        
+        $name_category=array();
         $model_qlsv = new Model_qlsv();
         $rows= $model_qlsv->GetInfoUserById($id);
         $rowConfession= $model_qlsv->GetInfoPost();
+        $rowNameCategory=$model_qlsv->GetCategoryById();
+        $_SESSION["test"]=$rowNameCategory;
+
         $rowUser=$model_qlsv->GetInfoUser();
         $GetPostConfessionUser= $model_qlsv->GetPostConfessionUser($id);
         

@@ -48,7 +48,7 @@
     <?php
    
   
-
+var_dump( $_SESSION["test"]);
     ?>
         <div class="container body">
             <div class="main_container">
