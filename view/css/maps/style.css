@@ -35,3 +35,8 @@
 .none {
   display: none;
 }
+.modal-content {
+  background-color: #62a073;
+  color: #d9e0e2 !important;
+  opacity: 0.8;
+}

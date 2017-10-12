@@ -104,12 +104,13 @@ Mail
 			
       	<form   id="FormUpdateInfoUser" method="get">
     
-<div class="form-group"><input style="display: none" type="text" name="idUpdate" value=<?php echo $row["id"] ?>  </div>
+<div class="form-group"><input style="display: none" type="text" name="idUpdate"   </div>
 					<div class="form-group"><label for="pwd">Avatar</label><input type="file"  style="display:inline-block" >
                        <img src=""class="imgUpdate" style="width:60px;float:right">
 
+				
 					</div>
-          <input type="hidden" name="idUser" class="form-control" id="firtName" placeholder="Email import">
+          <input type="hidden" name="idUser" class="form-control" id="firtName" value=<?php echo $row["id"] ?> placeholder="Email import">
 					<div class="form-group"><label for="pwd">Mail:</label><input type="text" name="MailUser" class="form-control" id="firtName" placeholder="Email import"></div>
 				<div class="form-group"><label for="email">UserName:</label><input type="text" name="NameUser" class="form-control" id="lastName" placeholder="Last name import now "></div>
 				<div class="form-group"><label for="Number Phone">Number Phone:</label><input type="text" name="NumberPhoneUser" class="form-control" id="NumberPhone" placeholder="Number Phone import now "></div>
@@ -127,13 +128,13 @@ Mail
         </div>
  
 
-        <input type="button"  name="uploadclick" class="btn btn-default btn-updateInfo " value="Update User">
+        
 					<!--xử lý thông báo trùng id-->
 				</form>
         <!-- end form  -->
 			</div>
 			<div class="modal-footer">
-				
+      <input type="button"  name="uploadclick" class="btn btn-default btn-updateInfo " value="Update User">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>

@@ -3,8 +3,19 @@
 <select name="" id="">
 
 <?php
-foreach($rowConfession as$indexs){
-echo "<option>".$indexs["Category_id"]."</option>";
+
+
+ function GetNameCategory($id)
+{
+
+  include "../../model/manager_user.php";
+  $Name_Category=Model_qlsv::inst()->GetCategoryById($id);
+  return $Name_Category;
+}
+foreach($rowConfession as $indexs){
+ $Name_Category= GetNameCategory($indexs["Category_id"]);
+
+echo "<option>".$Name_Category."</option>";
 }
 ?>
 </select>

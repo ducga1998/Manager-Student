@@ -62,14 +62,30 @@ public function CoutRowPost(){
    
 }
 // chỉ có dành cho admin
-public function UpdateInfoUser($id)
+public function UpdateInfoUser($id,$Name,$Country,$BirthDay,$Mail,$NumberPhone,$GrantUser)
 {
-    $sql="UPDATE infouser
-    SET BirthDay = value1, Country = value2, BirthDay = value1, Mail = value2, NumberPhone = value2, Name = value2,
-    WHERE id=$id;";
+    $sql="UPDATE infouser SET BirthDay = '$BirthDay', Country = '$Country', Mail = '$Mail', NumberPhone = $NumberPhone, Name = '$Name',Current_id=$GrantUser
+    WHERE id=$id";
+    echo $sql;
     $result = $this->conn->query($sql);
     mysqli_close($this->conn);
     
+}
+ public function GetCategoryById($id_category)
+{
+    $sql="SELECT name_category FROM catogory WHERE id=$id_category";
+    
+    $result = $this->conn->query($sql);
+     
+       $row = $result->fetch_assoc();
+       if($row)
+       {
+           echo "bug rồi em";
+           return FALSE;
+       }
+    
+       
+       return $row;
 }
 
 public function GetInfoUserById($id)

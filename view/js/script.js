@@ -48,6 +48,15 @@ $(document).ready(function() {
     $(document).on("click", ".btn-updateInfo", function() {
         var form = $('#FormUpdateInfoUser').serialize();
         console.log(form);
+        var MailUser = $("[name='MailUser']").val();
+        var idUser = $("[name='idUser']").val();
+        var NameUser = $("[name='NameUser']").val();
+        var NumberPhoneUser = $("[name='NumberPhoneUser']").val();
+        var birthDay = $("[name='birthDay']").val();
+        var GrantUser = $("[name='GrantUser']").val();
+
+        var CountryUser = $("[name='CountryUser']").val();
+        var StringArray = idUser + "." + NameUser + "." + NumberPhoneUser + "." + birthDay + "." + GrantUser + "." + CountryUser + "." + MailUser;
 
 
 
@@ -57,21 +66,17 @@ $(document).ready(function() {
             url: "./view/UpdateInfoUser.php",
 
             data: {
-                'formData': formData
+                'formData': StringArray
 
             },
             cache: false,
             success: function(data) {
-                $(".success").text(data);
-                $(".success").addClass("showAlert");
-                $("#TitleConfession").val("");
-                $("#Category").val("");
-                $("#Content").val("");
+
             }
         });
 
     });
-
+    /* event click btn-updateinfo */
     $(document).on("click", ".btn-post", function() {
         /* id, UserName, Title,Content,view,Category */
         var id = $(this).attr("iduser");
