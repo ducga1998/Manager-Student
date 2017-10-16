@@ -41,7 +41,65 @@
             opacity: 1;
             transition: 1s;
         }
+        .mce-notification-inner{
+            display:none;
+        }
+        .mce-notification-warning , .mce-notification-warning .mce-progress .mce-text{
+            display:none;
+        }
+        
     </style>
+   <!--   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            color_picker_callback: function(callback, value) {
+                callback('#FF00FF');
+            },
+         
+            height: 300,
+            codesample_languages: [{
+                text: 'HTML/XML',
+                value: 'markup'
+            }, {
+                text: 'JavaScript',
+                value: 'javascript'
+            }, {
+                text: 'CSS',
+                value: 'css'
+            }, {
+                text: 'PHP',
+                value: 'php'
+            }, {
+                text: 'Ruby',
+                value: 'ruby'
+            }, {
+                text: 'Python',
+                value: 'python'
+            }, {
+                text: 'Java',
+                value: 'java'
+            }, {
+                text: 'C',
+                value: 'c'
+            }, {
+                text: 'C#',
+                value: 'csharp'
+            }, {
+                text: 'C++',
+                value: 'cpp'
+            }],
+            toolbar: [
+                'undo redo | styleselect | bold italic | link image',
+                'alignleft aligncenter alignright', ' strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript'
+            ],
+            content_css: 'css/style.css',
+            schema: 'html5'
+
+
+
+        });
+    </script> -->
 
 
     <body class="nav-md">
@@ -278,44 +336,9 @@ var_dump( $_SESSION["test"]);
                     </div>
 
                     <div class="hide PostConfession ">
-                        <h1>Name post:<?php 
-                       echo $rows["Name"];
-                        
-                        ?></h1>
-                        <form action="">
-                            <div class="row">
-                                
-                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <div class="form-group">
-                            <label for="comment">Title:</label>
-                            <input name="tilte" type="text" class="form-control" id="TitleConfession">
-                        </div>
-                       
-                                </div>
-                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <div class="form-group">
-                            <label for="comment">Category:</label>
-                            <input name="Category" type="text" class="form-control" id="Category">
-                        </div>
-                                </div>
-                                
-                        
-                        </div>
-                        <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>
-                        </div>
-                        <input <?php echo "IdUser='".$rows["id"]."' UserName='".$rows["UserName"]."' "; ?> 
-                        type="button" class="btn btn-primary btn-post" value="Post">
-                        </form>
-                        
-                        <div class="alert alert-success success">
-                           
-                        </div>
-                        
-
-
-                    </div>
+                       <?php 
+                       include "./view/includeView/PostConfession.php"
+                       ?>
 
 
 

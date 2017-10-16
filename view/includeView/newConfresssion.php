@@ -1,6 +1,7 @@
 
 <input type="text">
-<select name="" id="">
+
+<select name="" id="selectCategory">
 
  <?php
  
@@ -9,14 +10,18 @@
 foreach($rowNameCategory as $indexs){
  
 
-echo "<option>".$indexs."</option>";
+echo "<option class='clickOption' idCategory='".$indexs["id_category"]."'>".$indexs["name_category"]."</option>";
 } 
+// end foreach select
 ?> 
 </select>
+<select name="" id="SubSelectCategory">
+<option>NO SUBCATEGORY</option></select>
+
 <?php
-               foreach($rowConfession as$index){
-                if($index["view"]==2){
-                     echo '<div class="media">
+         foreach($rowConfession as$index){
+           if($index["view"]==2){
+          echo '<div class="media">
     
     <div class="media-body">
     <img style="width:30px;margin:3px;"   src="./view/images/img.jpg" alt=".." class="img-circle profile_img">
@@ -24,9 +29,7 @@ echo "<option>".$indexs."</option>";
       <h4>'.$index["Content"].'</h4>
     </div>
   </div>';
-                }
-  
-                 
-               }
+          }
+         }
                                 
                  ?>

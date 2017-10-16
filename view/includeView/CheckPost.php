@@ -1,5 +1,13 @@
 <?php
-var_dump($GetPostConfessionUser);
+
+
+$test=serialize ($GetPostConfessionUser);
+var_dump(base64_decode($test));
+
+var_dump(unserialize($test));
+var_dump(md5($test));
+
+
                foreach($GetPostConfessionUser as$index){
                 //  ==1 là những cái chưa đc duyệt
                    if($index["view"]==1){

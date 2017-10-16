@@ -24,7 +24,7 @@ $dbname = "projectbig";
 
 isset($_REQUEST["StringArray"])?$StringArray=$_REQUEST["StringArray"]:1;
         echo $StringArray;
-	  $array=explode(".",$StringArray);
+	  $array=explode(",",$StringArray);
 	  $id=$array[0];
 
 	  $UserName=$array[1];

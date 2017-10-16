@@ -48,7 +48,7 @@ echo "<table class='table table-bordered  table-hover'>
 
    }
    else {
-   	# code...
+   	# code... 
    	$avatar=$row["Avatar"];
    }
 /* UserName
@@ -107,7 +107,7 @@ Mail
 <div class="form-group"><input style="display: none" type="text" name="idUpdate"   </div>
 					<div class="form-group"><label for="pwd">Avatar</label><input type="file"  style="display:inline-block" >
                        <img src=""class="imgUpdate" style="width:60px;float:right">
-
+18630598
 				
 					</div>
           <input type="hidden" name="idUser" class="form-control" id="firtName" value=<?php echo $row["id"] ?> placeholder="Email import">

@@ -76,17 +76,34 @@ $(document).ready(function() {
         });
 
     });
-    /* event click btn-updateinfo */
-    $(document).on("click", ".btn-post", function() {
-        /* id, UserName, Title,Content,view,Category */
-        var id = $(this).attr("iduser");
-        var id_post = $(this).attr("id_post");
 
-        var UserName = $(this).attr("username");
-        var title = $("#TitleConfession").val();
-        var Category = $("#Category").val();
-        var content = $("#Content").val();
-        var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category + "." + id_post;
+    /* event click btn-updateinfo */
+    $(document).on("click", ".btn-post", function(e) {
+        /* id, UserName, Title,Content,view,Category */
+        var StringArray = "";
+        var arrayData = new Array();
+
+        var i = 0;
+
+        e.preventDefault();
+        var data = $("#formPostConfession").serializeArray();
+
+        data.forEach(function(e) {
+            arrayData[i] = e.value;
+            i++;
+
+        }, this);
+        StringArray = arrayData.toString();
+
+
+        /*    var id = $(this).attr("iduser");
+          var id_post = $(this).attr("id_post");
+
+          var UserName = $(this).attr("username");
+          var title = $("#TitleConfession").val();
+          var Category = $("#Category").val();
+          var content = $("#Content").val();
+          var StringArray = id + "." + UserName + "." + title + "." + content + "." + Category + "." + id_post; */
 
         $.ajax({
             type: "GET",
@@ -105,7 +122,6 @@ $(document).ready(function() {
                 $("#Content").val("");
             }
         });
-
 
     });
     $(document).on("click", ".btn-browse", function() {
@@ -184,6 +200,33 @@ $(document).ready(function() {
 
 
     });
+    /* code  cho select category */
+    $('#selectCategory').change(function() {
+        var element = $(this);
+        var SelectName = element.val();
+
+        $.ajax({
+            type: "GET",
+            url: "./view/Accept.php",
+
+            data: {
+                'selectName': SelectName
+
+            },
+            cache: false,
+            success: function(data) {
+
+                $("#SubSelectCategory").html(data);
+
+            }
+
+
+
+        });
+
+    });
+
+
 
 
 

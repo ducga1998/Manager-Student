@@ -74,18 +74,33 @@ public function UpdateInfoUser($id,$Name,$Country,$BirthDay,$Mail,$NumberPhone,$
 }
  public function GetCategoryById()
 {
-    $sql="SELECT  name_category
-FROM category
-INNER JOIN post
-ON id=id_category";
+    $sql="SELECT  id_category,name_category FROM category";
     
     $result = $this->conn->query($sql);
-     
-       $row = $result->fetch_assoc();
+    $rows=array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
       
     
        
-       return $row;
+       return $rows;
+}
+public function GetSubCategoryByName($name)
+{
+    $sql="SELECT name_category_detail
+    FROM category_detail
+    INNER JOIN category ON name_category='$name'";
+    
+    $result = $this->conn->query($sql);
+    $rows=array();
+    while($row = $result->fetch_assoc()) {
+        $rows[] = $row;
+    }
+      
+    
+       
+       return $rows;
 }
 
 public function GetInfoUserById($id)
