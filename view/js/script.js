@@ -204,6 +204,7 @@ $(document).ready(function() {
     $('#selectCategory').change(function() {
         var element = $(this);
         var SelectName = element.val();
+        console.log("test");
 
         $.ajax({
             type: "GET",
@@ -217,6 +218,42 @@ $(document).ready(function() {
             success: function(data) {
 
                 $("#SubSelectCategory").html(data);
+
+            }
+
+
+
+        });
+
+    });
+
+    function clickOption(id) {
+        console.log(id);
+    }
+    $(".clickOption").focus(function() {
+        var id = $(this).attr("idcategory");
+        console.log(id);
+    });
+    $('#AddCategory').change(function() {
+        var element = $(this);
+        var SelectName = element.val();
+        var id = element.attr("idcategory");
+        // get attr option khi change select
+        var option = $('option:selected', this).attr('idcategory');
+        console.log(option);
+
+        $.ajax({
+            type: "GET",
+            url: "./view/Accept.php",
+
+            data: {
+                'selectName': SelectName
+
+            },
+            cache: false,
+            success: function(data) {
+
+                $("#SubAddCategory").html(data);
 
             }
 

@@ -15,15 +15,27 @@
                        
                        
                                 </div>
-                                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                <div class="form-group">
-                            <label for="comment">Category:</label>
-                            <input name="Category" type="text" class="form-control" id="Category">
-                        </div>
+                                
+                                <select name="" id="AddCategory">
+                                
+                                 <?php
+                                 
+                                
+                                  
+                                foreach($rowNameCategory as $indexs){
+                                 
+                                
+                                echo "<option onclick='clickOption(this.idCategory)'  idCategory='".$indexs["id_category"]."'>".$indexs["name_category"]."</option>";
+                                } 
+                                // end foreach select
+                                ?> 
+                                </select>
+                                <select name="" id="SubAddCategory">
+                                <option>NO SUBCATEGORY</option></select>
                                 </div>
                                 
                         
-                        </div>
+                        
                         <div class="form-group">
                             <label for="comment">Comment:</label>
                             <textarea name="Content" class="form-control" rows="5" id="Content"></textarea>

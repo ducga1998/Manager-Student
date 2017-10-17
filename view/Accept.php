@@ -63,7 +63,7 @@ if(isset($_REQUEST["DeletePost"])){
         $sql1="SELECT id_category FROM category where name_category='$selectName'";
         $resultA = $conn->query($sql1);
         $id = $resultA->fetch_assoc();
-        var_dump($id);
+      
         $id=$id["id_category"];
         
         $sql="SELECT name_category_detail
